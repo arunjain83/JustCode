@@ -1,3 +1,5 @@
+import java.util.List;
+import java.util.ArrayList;
 // "static void main" must be defined in a public class.
 public class SlidingWindowMax {
     public static void main(String[] args) {
