@@ -1,0 +1,32 @@
+class ProductExceptSelf {
+    public int[] productExceptSelf(int[] nums) {
+        int prd = 1;
+        int countZero = 0;
+        for(int i =0;i<nums.length;i++){
+            if(nums[i] != 0){
+                prd*=nums[i];    
+            }else{
+                countZero++;
+            }
+        }
+        int[] prdArr = new int[nums.length];
+        for(int i =0;i<nums.length;i++){
+            if(countZero>1) {
+                prdArr[i]=0;
+            }else if (countZero == 0 ){            
+                if (nums[i] != 0){
+                    prdArr[i]=prd/nums[i];
+                }else {
+                    prdArr[i]=prd;
+                }
+            }else{
+                if (nums[i] != 0){
+                    prdArr[i]=0;
+                }else {
+                    prdArr[i]=prd;
+                }
+            }
+        }
+        return prdArr;
+    }
+}
