@@ -1,0 +1,27 @@
+class FirstMssingPositive {
+    public int firstMissingPositive(int[] nums) {
+        int sum = 0;
+        int count = 0;
+        int totSum = 0;
+        int missingNum = 0;
+        int min = 0;
+        
+        if(1 not in nums){
+            return 1;
+        }
+        
+        for(int i=0;i<nums.length;i++){
+            if (nums[i]<=0) {
+                continue;
+            }else{
+               sum+=nums[i];
+                count++;
+                min = min<nums[i]?min:nums[i];
+            }
+        }
+        count++;
+        totSum = count*(count+1)/2;
+        missingNum = totSum - sum;
+        return missingNum;
+    }
+}
